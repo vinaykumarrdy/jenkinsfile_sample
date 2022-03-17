@@ -24,6 +24,7 @@ pipeline
             steps
             {
                 echo "executing grdle"
+                sh 'exit $?'
                 sh './gradlew -v'
                 sh 'exit $?'
                 
