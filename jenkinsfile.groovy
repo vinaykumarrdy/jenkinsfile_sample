@@ -15,6 +15,7 @@ pipeline
                 nodejs('Nodejs_10_0_0')
                 {
                     sh 'yarn install'
+                    sh 'exit $?'
                 }
             }
         }
@@ -24,6 +25,8 @@ pipeline
             {
                 echo "executing grdle"
                 sh './gradlew -v'
+                sh 'exit $?'
+                
                 
             }
         }
